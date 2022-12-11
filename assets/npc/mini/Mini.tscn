@@ -1,0 +1,201 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/player/light.png" type="Texture" id=1]
+[ext_resource path="res://assets/npc/mini/mini.png" type="Texture" id=2]
+[ext_resource path="res://assets/npc/mini/Mini.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 15.1876
+height = 48.516
+
+[sub_resource type="Animation" id=2]
+resource_name = "mini_appear"
+length = 0.7
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite/Light2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.668676, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.7 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Sprite/Light2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 2.36357, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.7 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Sprite/Light2D:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.7 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Sprite:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -0.248608, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.7 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Sprite:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -1.41658, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.7 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Sprite:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 360, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.7 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Sprite:scale:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 0.3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.7 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Sprite:scale:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0.3, -0.25, 0, 0.25, 0, 0.3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.7 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "mini_default"
+length = 0.1
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite/Light2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.668676, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Sprite/Light2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 2.36357, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Sprite/Light2D:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Sprite:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -0.248608, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Sprite:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -1.41658, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.1 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Sprite:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.1 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Sprite:scale:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0.3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.1 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Sprite:scale:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0.3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.1 )
+}
+
+[node name="Mini" type="KinematicBody2D"]
+position = Vector2( 1.0453, 1.26173 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.248608, -1.41658 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="Sprite"]
+position = Vector2( 0.668676, 2.36357 )
+texture = ExtResource( 1 )
+energy = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -12.7136 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/mini_appear = SubResource( 2 )
+anims/mini_default = SubResource( 3 )

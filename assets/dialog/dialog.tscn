@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/SignikaNegative-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/dialog/dialog.gd" type="Script" id=2]
+[ext_resource path="res://assets/npc/mini/mini_profile.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "dialog"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("TextureRect:rect_scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("TextureRect:rect_scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("TextureRect:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("TextureRect:rect_position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("TextureRect:rect_position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_color = Color( 0.894118, 0.894118, 0.894118, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[node name="mini_dialog" type="Node2D"]
+z_index = 10
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/dialog = SubResource( 1 )
+
+[node name="TextureRect" type="ColorRect" parent="."]
+anchor_left = 12.312
+anchor_top = 15.684
+anchor_right = 12.312
+anchor_bottom = 15.684
+margin_right = 448.0
+margin_bottom = 348.0
+rect_pivot_offset = Vector2( 224, 252.237 )
+color = Color( 1, 1, 1, 0.756863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 4.0
+margin_right = 448.0
+margin_bottom = 280.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "       Hello! My name is Mini and I'm here to guide you out of the nightmare.
+To do that, you need to find a key. To make it a little bit easier, I give you a super speed ability. You can also use me to shoot light towards enemies. But you need to remember that you have limited amount of magic to use.
+If you fail, you need to start from the beginning. And remember, be careful!"
+valign = 1
+autowrap = true
+max_lines_visible = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="f1" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 312.0
+margin_right = 231.0
+margin_bottom = 326.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Press F2 to close info."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mini" type="Sprite" parent="."]
+position = Vector2( 21.9219, 21.25 )
+scale = Vector2( 0.292292, 0.2125 )
+texture = ExtResource( 4 )

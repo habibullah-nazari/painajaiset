@@ -1,0 +1,225 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/SignikaNegative-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/player/Stamina_bar.gd" type="Script" id=2]
+[ext_resource path="res://assets/player/Hp_bar.gd" type="Script" id=3]
+[ext_resource path="res://Panel.gd" type="Script" id=4]
+[ext_resource path="res://assets/player/max_profile.png" type="Texture" id=5]
+[ext_resource path="res://assets/npc/mini/mini_profile.png" type="Texture" id=6]
+[ext_resource path="res://assets/dialog/dialogs_mini_max.gd" type="Script" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.305882, 0.305882, 0.305882, 0.517647 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0.423529, 0.0588235, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 0.0784314 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0.607843, 1, 0.980392 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 1, 1, 0.0784314 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "def"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Panel/dialog/press_f:custom_colors/font_color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Panel/dialog/press_f:custom_colors/font_color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Panel/dialog/press_f:custom_colors/font_color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Panel/dialog/press_f:custom_colors/font_color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.0901961, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+
+[node name="Screen" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.046
+anchor_top = 0.03
+anchor_right = 0.227
+anchor_bottom = 0.156
+margin_left = -0.320007
+margin_top = -8.4
+margin_right = 4.15997
+margin_bottom = -0.480011
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hp_bar" type="ProgressBar" parent="Panel"]
+margin_left = 121.0
+margin_top = 10.0
+margin_right = 331.0
+margin_bottom = 35.0
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+step = 1.0
+value = 50.0
+percent_visible = false
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stamina_bar" type="ProgressBar" parent="Panel"]
+margin_left = 121.0
+margin_top = 40.0
+margin_right = 331.0
+margin_bottom = 65.0
+custom_styles/fg = SubResource( 5 )
+custom_styles/bg = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+step = 1.0
+value = 50.0
+percent_visible = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hp" type="Label" parent="Panel"]
+margin_left = 56.0
+margin_top = 22.5
+margin_right = 96.0
+margin_bottom = 36.5
+text = "Health"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stamina" type="Label" parent="Panel"]
+margin_left = 56.0
+margin_top = 53.0
+margin_right = 107.0
+margin_bottom = 72.0
+text = "Stamina"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="f1f2" type="Label" parent="Panel"]
+anchor_left = -0.023
+anchor_right = 1.0
+anchor_bottom = 1.023
+margin_left = 65.004
+margin_top = 112.0
+margin_right = -8.0
+margin_bottom = 0.0559998
+text = "Press F1 to see keymap and  F2 to read info."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attempts" type="Label" parent="Panel"]
+margin_left = 57.0
+margin_top = 81.0
+margin_right = 121.0
+margin_bottom = 100.0
+text = "Attempts:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="num" type="Label" parent="Panel/Attempts"]
+margin_left = 112.0
+margin_right = 176.0
+margin_bottom = 19.0
+text = "Attempts:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dialog" type="Label" parent="Panel"]
+margin_left = -88.0
+margin_top = 800.0
+margin_right = 1832.0
+margin_bottom = 960.0
+align = 1
+valign = 1
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="press_f" type="Label" parent="Panel/dialog"]
+margin_top = 88.0
+margin_right = 1920.0
+margin_bottom = 150.0
+custom_colors/font_color = Color( 1, 1, 1, 0.951166 )
+text = "press F to continue"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/def = SubResource( 8 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 8.0
+margin_top = 24.0
+margin_right = 305.001
+margin_bottom = 321.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_top = 77.0
+margin_right = 72.0
+margin_bottom = 172.999
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
